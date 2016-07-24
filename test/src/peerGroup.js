@@ -175,6 +175,7 @@ test('peer methods', (t) => {
 test('close', (t) => {
   var i = 0
   var startPeers = pg.peers.length
+  t.ok(startPeers > 0, 'connected to some peers')
   pg.on('disconnect', (peer) => {
     t.ok(pg.closed, 'pg "closed" state is true')
     i++
